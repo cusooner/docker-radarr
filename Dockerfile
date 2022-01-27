@@ -1,6 +1,7 @@
 FROM alpine:3.15 
 ARG RADARR_BRANCH=master
 ARG RADARR_VER=3.2.2.5080
+ENV PUID=1001 PGID=100
 
 RUN apk add --no-cache bash libstdc++ libgcc icu-libs libintl sqlite-libs libmediainfo
 #  xmlstarlet

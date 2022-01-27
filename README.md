@@ -7,24 +7,24 @@ Experimental image for my personal learning project.
 shell
 ```shell
 docker run -d \
-    -p 5055:5055 \
+    -p 7878:7878 \
     -v /blahblah/config:/config \
-    thebungler/overseerr
+    thebungler/radarr
 ```
 
 docker-compose
 ```docker-compose
   overseerr:
-    image: thebungler/overseerr:latest
-    container_name: overseerr
+    image: thebungler/radarr:latest
+    container_name: radarr
     environment:
       - PUID=1001
       - PGID=100
       - TZ=Europe/Berlin
     volumes:
-      - /mydockervol/overseerr:/config
+      - /mydockervol/radarr:/config
     ports:
-      - 5055:5055
+      - 7878:7878
     restart: unless-stopped
 ```
 
@@ -38,4 +38,4 @@ docker-compose
 
 ## Network
 
-- `5055/tcp`      - web interface
+- `7878/tcp`      - web interface
